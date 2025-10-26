@@ -1,7 +1,7 @@
 """Main module for the stock data pipeline project."""
 
 from rich.console import Console
-from .api.controllers.cripto_currencies import process_currency_exchange_rate, process_digital_currency_daily
+from .transform.cripto_currencies import process_currency_exchange_rate, process_digital_currency_daily
 
 console = Console()
 
