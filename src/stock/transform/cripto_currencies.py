@@ -1,14 +1,6 @@
 from ..extract.api_alphavantage import get_exchange_rate, get_digital_currency_daily
 import pandas as pd
 
-def transform_sales(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.rename(columns=str.lower)
-    df["date"] = pd.to_datetime(df["date"])
-    df["revenue"] = df["quantity"] * df["price"]
-    df = df.dropna(subset=["customer_id"])
-    return df
-
-
 def process_currency_exchange_rate(from_currency="BTC", to_currency="USD"):
     """Fetches and returns the exchange rate data for the specified cryptocurrencies.
 
